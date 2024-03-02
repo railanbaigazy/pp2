@@ -1,22 +1,20 @@
 import os
 
-PATH = "../../"
+PATH = input("Input your path: ")
 
 def check_access(path):
     info = {}
-    info["exists"] = os.path.exists(path)
+    if not os.path.exists(path):
+        raise FileNotFoundError("No such path exists")
 
-    if info["exists"]:
-        info["read"] = os.access(path, os.R_OK)
-        info["write"] = os.access(path, os.W_OK)
-        info["execute"] = os.access(path, os.X_OK)
-    else:
-        info["read"] = False
-        info["write"] = False
-        info["execute"] = False
-    
+    info["read"] = os.access(path, os.R_OK)
+    info["write"] = os.access(path, os.W_OK)
+    info["execute"] = os.access(path, os.X_OK)
+
     return info
 
-access_info = check_access(PATH)
-
-print(f"Path: {PATH}\nAccess information:\n{access_info}")
+try:
+    access_info = check_access(PATH)
+    print(f"Path: {PATH}\nAccess information:\n{access_info}")
+except FileNotFoundError as e:
+    print(e)
