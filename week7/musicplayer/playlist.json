@@ -1,0 +1,31 @@
+{
+    "playlist": [
+        {
+            "name": "Құрмаш Маханов - Өмірімнің көктемі",
+            "path": "../assets/sounds/Құрмаш Маханов - Өмірімнің көктемі.mp3",
+            "format": "mp3",
+            "duration": {
+                "minutes": "3",
+                "seconds": "14"
+            }
+        },
+        {
+            "name": "Arctic Monkeys - Brianstorm",
+            "path": "../assets/sounds/Arctic Monkeys - Brianstorm.mp3",
+            "format": "mp3",
+            "duration": {
+                "minutes": "2",
+                "seconds": "53"
+            }
+        },
+        {
+            "name": "Kanye West - Moon",
+            "path": "../assets/sounds/Kanye West - Moon.mp3",
+            "format": "mp3",
+            "duration": {
+                "minutes": "2",
+                "seconds": "36"
+            }
+        }
+    ]
+}
