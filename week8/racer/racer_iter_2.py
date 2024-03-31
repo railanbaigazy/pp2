@@ -189,6 +189,7 @@ while not done:
     if pygame.sprite.spritecollideany(P1, enemies):
         pygame.mixer.Sound("crash.wav").play()
         time.sleep(0.5)
+        pygame.mixer.stop()
 
         SCREEN.fill(RED)
         SCREEN.blit(game_over_text, (30, 250))
@@ -201,7 +202,8 @@ while not done:
         for entity in all_sprites:
             entity.kill()
         time.sleep(5)
-        done = True
+        pygame.quit()
+        sys.exit()
 
     # Handling collisions with Coins
     if pygame.sprite.spritecollideany(P1, coins):
@@ -221,6 +223,5 @@ while not done:
     pygame.display.update()
     Clock.tick(FPS)
 
-pygame.mixer.stop()
 pygame.quit()
 sys.exit()
